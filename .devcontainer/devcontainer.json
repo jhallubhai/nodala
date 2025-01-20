@@ -1,0 +1,14 @@
+{
+    "name": "Ubuntu 22.04 with Docker",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "features": {
+      "docker-in-docker": {
+        "version": "latest"
+      }
+    },
+    "postCreateCommand": "sudo service docker start",
+    "forwardPorts": [2375],
+    "mounts": [
+      "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ]
+  }
